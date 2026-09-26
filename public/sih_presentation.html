@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIH 2026 - Team VEYRAX - SIH26233 Presentation Deck</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a;
+      color: #0f172a;
+    }
+    
+    .slide-page {
+      width: 1280px;
+      height: 720px;
+      background: white;
+      margin: 20px auto;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      page-break-after: always;
+    }
+
+    @media print {
+      body { background: white; margin: 0; }
+      .slide-page { margin: 0; box-shadow: none; border-radius: 0; page-break-after: always; }
+      .no-print { display: none !important; }
+    }
+    
+    /* Pyramid geometry */
+    .pyramid-wrapper {
+      position: relative;
+      width: 440px;
+      height: 380px;
+      margin: 0 auto;
+    }
+    
+    .pyramid-tier {
+      width: 100%;
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    }
+
+    .oval-badge {
+      border: 3px solid #6366f1;
+      border-radius: 9999px;
+      padding: 6px 24px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="p-4">
+
+  <!-- Print & Navigation Controls -->
+  <div className="no-print max-w-5xl mx-auto mb-4 flex items-center justify-between bg-slate-900 p-4 rounded-xl text-white border border-slate-800">
+    <div>
+      <h1 class="text-lg font-bold text-cyan-400 font-mono">🏆 SIH 2026 Presentation Deck — Team VEYRAX</h1>
+      <p class="text-xs text-slate-400">Problem Statement ID: SIH26233 | Ministry of Food Processing Industries (MoFPI)</p>
+    </div>
+    <div class="flex space-x-2">
+      <button onclick="window.print()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 font-bold text-xs rounded-lg shadow">
+        🖨️ Print / Save as PDF
+      </button>
+      <a href="https://github.com/Aravindh-coder/spectraguard-x" target="_blank" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-cyan-400 font-bold text-xs rounded-lg border border-slate-700">
+        🔗 View GitHub Repo
+      </a>
+    </div>
+  </div>
+
+  <!-- SLIDE 1: TITLE PAGE -->
+  <div class="slide-page p-10 flex flex-col justify-between border-t-8 border-indigo-600">
+    <!-- Top Header -->
+    <div class="flex items-center justify-between border-b-2 border-slate-200 pb-4">
+      <h1 class="text-4xl font-extrabold tracking-tight text-indigo-950 font-serif">
+        SMART INDIA HACKATHON 2026
+      </h1>
+      <div class="flex items-center space-x-3">
+        <div class="text-right">
+          <div class="text-xs font-bold text-slate-500">SMART INDIA HACKATHON</div>
+          <div class="text-sm font-extrabold text-indigo-900">2026</div>
+        </div>
+        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 to-emerald-500 p-1 flex items-center justify-center text-white font-bold text-xs text-center shadow">
+          SIH
+        </div>
+      </div>
+    </div>
+
+    <!-- Title Badge -->
+    <div class="text-center my-2">
+      <h2 class="text-3xl font-black text-slate-900 tracking-wide uppercase border-b-4 border-slate-900 inline-block px-8 py-1">
+        TITLE PAGE
+      </h2>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="grid grid-cols-12 gap-6 items-center flex-1">
+      <!-- Left Details List -->
+      <div class="col-span-7 space-y-4 text-slate-900 font-semibold text-base leading-relaxed pl-4">
+        <div class="flex items-start space-x-2">
+          <span class="text-slate-900 font-black text-xl">•</span>
+          <div><strong class="font-extrabold text-slate-950">Problem Statement ID –</strong> SIH26233</div>
+        </div>
+
+        <div class="flex items-start space-x-2">
+          <span class="text-slate-900 font-black text-xl">•</span>
+          <div>
+            <strong class="font-extrabold text-slate-950">Problem Statement Title –</strong> Inline Microbial Contamination Detection Using Hyperspectral Edge Sensors
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-2">
+          <span class="text-slate-900 font-black text-xl">•</span>
+          <div><strong class="font-extrabold text-slate-950">Theme –</strong> Agriculture, FoodTech & Rural Development</div>
+        </div>
+
+        <div class="flex items-start space-x-2">
+          <span class="text-slate-900 font-black text-xl">•</span>
+          <div><strong class="font-extrabold text-slate-950">PS Category –</strong> Hardware</div>
+        </div>
+
+        <div class="flex items-start space-x-2">
+          <span class="text-slate-900 font-black text-xl">•</span>
+          <div><strong class="font-extrabold text-slate-950">Team ID –</strong> 127059</div>
+        </div>
+
+        <div class="flex items-start space-x-2">
+          <span class="text-slate-900 font-black text-xl">•</span>
+          <div><strong class="font-extrabold text-slate-950">Team Name –</strong> VEYRAX</div>
+        </div>
+      </div>
+
+      <!-- Right SIH Graphic Emblem -->
+      <div class="col-span-5 flex justify-center">
+        <div class="relative w-80 h-80 bg-slate-100 rounded-3xl p-6 shadow-inner border border-slate-300 flex flex-col items-center justify-center text-center">
+          <div class="w-48 h-48 rounded-full bg-gradient-to-tr from-amber-500 via-emerald-500 to-indigo-600 p-2 shadow-2xl flex items-center justify-center">
+            <div class="w-full h-full bg-white rounded-full flex flex-col items-center justify-center p-3">
+              <div class="text-2xl font-black text-emerald-600">10101</div>
+              <div class="text-sm font-bold text-amber-600 font-mono">01010</div>
+              <div class="text-xs font-bold text-indigo-700">SIH 2026</div>
+            </div>
+          </div>
+          <div class="mt-4 font-black text-xl text-slate-800 tracking-wider">SIH 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: PROPOSED SOLUTION -->
+  <div class="slide-page p-8 flex flex-col justify-between">
+    <!-- Header -->
+    <div class="flex items-center justify-between border-b-2 border-indigo-600 pb-2">
+      <div class="flex items-center space-x-4">
+        <span class="oval-badge text-indigo-900 text-sm">VEYRAX</span>
+        <h1 class="text-3xl font-black text-slate-900">
+          VEYRAX 2.0 <span class="text-indigo-600 font-bold">Proposed solution</span>
+        </h1>
+      </div>
+      <div class="text-right">
+        <span class="text-xs font-bold text-slate-500">SIH 2026</span>
+      </div>
+    </div>
+
+    <!-- Main Content 3-Column Layout -->
+    <div class="grid grid-cols-12 gap-4 flex-1 items-center mt-2">
+      <!-- Left Column: 3 Dark Cards -->
+      <div class="col-span-4 space-y-3">
+        <div class="bg-slate-800 text-white p-3.5 rounded-xl shadow-md border-l-4 border-amber-500">
+          <div class="font-bold text-amber-400 text-xs mb-1">Real-world issue:</div>
+          <p class="text-[11px] leading-relaxed">
+            Microorganisms (Salmonella, E. coli, Aflatoxins) infect food processing lines silently, causing foodborne illness outbreaks, massive product recalls, and regulatory penalties.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 text-white p-3.5 rounded-xl shadow-md border-l-4 border-rose-500">
+          <div class="font-bold text-rose-400 text-xs mb-1">Why important:</div>
+          <p class="text-[11px] leading-relaxed">
+            Traditional 24–48hr lab culturing lets infected batches reach consumer markets; manual spot checks miss patchy contamination, halting entire processing operations.
+          </p>
+        </div>
+
+        <div class="bg-slate-800 text-white p-3.5 rounded-xl shadow-md border-l-4 border-emerald-500">
+          <div class="font-bold text-emerald-400 text-xs mb-1">Solution:</div>
+          <p class="text-[11px] leading-relaxed">
+            VEYRAX fuses 256-band NIR Hyperspectral Imaging (900-1700nm), UV 365nm Fluorescence, RGB vision & ToF topography at the edge to detect microbial risk in &lt;10ms and auto-reject contaminated products.
+          </p>
+        </div>
+
+        <div class="flex items-center space-x-2 pt-1">
+          <a href="https://github.com/Aravindh-coder/spectraguard-x" target="_blank" class="px-3 py-1.5 bg-indigo-600 text-white font-bold text-[10px] rounded-lg shadow">
+            LINK DEMO DASHBOARD
+          </a>
+        </div>
+      </div>
+
+      <!-- Center Column: Pyramidal Stack -->
+      <div class="col-span-5 flex flex-col items-center justify-center">
+        <!-- Pyramid Structure -->
+        <div class="w-full space-y-1 text-center font-bold text-[10px] text-white">
+          <!-- Tier 1: Gold Peak -->
+          <div class="mx-auto w-36 bg-amber-500 p-2 rounded-t-xl shadow border border-amber-400">
+            <div class="text-[9px] uppercase tracking-wider text-amber-950 font-black">Core Innovation</div>
+            <div class="text-xs font-black">Edge AI Node</div>
+            <div class="text-[8px] opacity-90">Jetson Orin Nano</div>
+          </div>
+
+          <!-- Tier 2: Primary Functions (Indigo) -->
+          <div class="mx-auto w-64 bg-indigo-600 p-2 shadow border border-indigo-400">
+            <div class="text-[9px] uppercase text-indigo-200">Primary Functions</div>
+            <div class="flex justify-around text-[10px] pt-0.5">
+              <span>Multi-Sensor Fusion</span>
+              <span>•</span>
+              <span>Open-Set Risk Score</span>
+            </div>
+          </div>
+
+          <!-- Tier 3: Protection & Response (Yellow) -->
+          <div class="mx-auto w-80 bg-amber-400 text-slate-950 p-2 shadow border border-amber-300">
+            <div class="text-[9px] uppercase font-black text-amber-900">Protection & Response</div>
+            <div class="flex justify-around text-[9px] font-bold">
+              <span>Auto Air-Jet Eject</span>
+              <span>Buzzer Alarm</span>
+              <span>SOS SMS Alert</span>
+            </div>
+          </div>
+
+          <!-- Tier 4: Sensing Base (Blue Grid) -->
+          <div class="w-full bg-sky-500 p-2 rounded-b-xl shadow border border-sky-400 grid grid-cols-5 gap-1 text-[8px]">
+            <div class="bg-sky-700 p-1 rounded">
+              <div class="font-black text-cyan-200">NIR HSI</div>
+              <div>900-1700nm</div>
+            </div>
+            <div class="bg-sky-700 p-1 rounded">
+              <div class="font-black text-amber-200">UV 365nm</div>
+              <div>Fluorescence</div>
+            </div>
+            <div class="bg-sky-700 p-1 rounded">
+              <div class="font-black text-indigo-200">RGB 4K</div>
+              <div>Spatial texture</div>
+            </div>
+            <div class="bg-sky-700 p-1 rounded">
+              <div class="font-black text-emerald-200">ToF 3D</div>
+              <div>Height topo</div>
+            </div>
+            <div class="bg-sky-700 p-1 rounded">
+              <div class="font-black text-rose-200">Temp/RH</div>
+              <div>Self-Calib</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Risk vs Solution -->
+      <div class="col-span-3 space-y-3">
+        <div class="text-center font-black text-sm text-slate-800 uppercase tracking-wider">
+          Risk vs Solution
+        </div>
+
+        <div class="space-y-2.5">
+          <div class="flex items-center justify-between gap-1 text-[10px] font-bold">
+            <div class="bg-rose-600 text-white p-2 rounded-lg text-center flex-1 shadow">Silent Microbial Spoilage</div>
+            <div class="text-slate-400 font-mono">↔</div>
+            <div class="bg-emerald-600 text-white p-2 rounded-lg text-center flex-1 shadow">Early Spectral Anomaly</div>
+          </div>
+
+          <div class="flex items-center justify-between gap-1 text-[10px] font-bold">
+            <div class="bg-rose-600 text-white p-2 rounded-lg text-center flex-1 shadow">Batch Recall & Outbreak</div>
+            <div class="text-slate-400 font-mono">↔</div>
+            <div class="bg-emerald-600 text-white p-2 rounded-lg text-center flex-1 shadow">Auto Pneumatic Eject</div>
+          </div>
+
+          <div class="flex items-center justify-between gap-1 text-[10px] font-bold">
+            <div class="bg-rose-600 text-white p-2 rounded-lg text-center flex-1 shadow">Late 48-Hour Culturing</div>
+            <div class="text-slate-400 font-mono">↔</div>
+            <div class="bg-emerald-600 text-white p-2 rounded-lg text-center flex-1 shadow">Live Digital Twin & SOS</div>
+          </div>
+        </div>
+
+        <!-- Inline Prototype Box -->
+        <div class="bg-slate-100 border border-slate-300 rounded-xl p-3 text-center text-[10px]">
+          <div class="font-bold text-slate-800">Inline Sensing Tunnel Prototype</div>
+          <div class="text-slate-500 text-[9px] mt-0.5">High-Speed Conveyor Belt System</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: TECHNICAL APPROACH -->
+  <div class="slide-page p-8 flex flex-col justify-between">
+    <div class="flex items-center justify-between border-b-2 border-indigo-600 pb-2">
+      <div class="flex items-center space-x-4">
+        <span class="oval-badge text-indigo-900 text-sm">VEYRAX</span>
+        <h1 class="text-3xl font-black text-slate-900">TECHNICAL APPROACH</h1>
+      </div>
+      <div class="text-right">
+        <span class="text-xs font-bold text-slate-500">SIH 2026</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12 gap-4 flex-1 items-center mt-2">
+      <!-- Left: Methodology Process -->
+      <div class="col-span-4 space-y-2">
+        <div class="font-black text-xs text-indigo-950 uppercase border-b border-indigo-200 pb-1">
+          METHODOLOGY & PROCESS OF IMPLEMENTATION
+        </div>
+
+        <div class="space-y-1.5 text-[10px]">
+          <div class="p-2 bg-sky-50 border-l-4 border-sky-500 rounded">
+            <strong class="text-sky-900">1. Sense & Collect:</strong> NIR (900-1700nm), UV 365nm fluorescence, RGB spatial camera & ToF topography.
+          </div>
+          <div class="p-2 bg-indigo-50 border-l-4 border-indigo-500 rounded">
+            <strong class="text-indigo-900">2. Edge Transmit:</strong> ESP32 streams telemetry packets over Wi-Fi / MQTT / OPC-UA.
+          </div>
+          <div class="p-2 bg-purple-50 border-l-4 border-purple-500 rounded">
+            <strong class="text-purple-900">3. Edge AI Fusion:</strong> Jetson Orin fuses 1D spectral + 2D spatial features into risk tensor.
+          </div>
+          <div class="p-2 bg-emerald-50 border-l-4 border-emerald-500 rounded">
+            <strong class="text-emerald-900">4. Decide & Protect:</strong> Dual AI + Physics engine triggers microsecond pneumatic air-jet ejection.
+          </div>
+          <div class="p-2 bg-amber-50 border-l-4 border-amber-500 rounded">
+            <strong class="text-amber-900">5. Monitor & Learn:</strong> Live Digital Twin canvas, batch fingerprinting & active learning queue.
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: Hardware & Software Stack Diagram -->
+      <div class="col-span-5 space-y-3">
+        <div class="bg-amber-50 border border-amber-300 rounded-xl p-3 space-y-1 text-[10px]">
+          <div class="font-black text-amber-900 text-center uppercase">HARDWARE: SENSE > PROCESS > PROTECT</div>
+          <div class="flex justify-between items-center bg-white p-2 rounded shadow-sm text-[9px] font-bold">
+            <span>5 Sensors + Camera</span>
+            <span>➔</span>
+            <span>ESP32 Node</span>
+            <span>➔</span>
+            <span>Jetson Edge AI</span>
+            <span>➔</span>
+            <span class="text-rose-600">Air Jet Relay</span>
+          </div>
+        </div>
+
+        <div class="bg-indigo-50 border border-indigo-300 rounded-xl p-3 space-y-1 text-[10px]">
+          <div class="font-black text-indigo-900 text-center uppercase">SOFTWARE: BACKEND > RISK ENGINE > DASHBOARD</div>
+          <div class="bg-white p-2 rounded shadow-sm space-y-1 text-[9px]">
+            <div class="flex justify-between font-bold">
+              <span>ESP32 + Edge Node</span>
+              <span>JSON (&lt;10ms)</span>
+              <span>React SCADA Digital Twin</span>
+            </div>
+            <div class="text-slate-600 text-[8px]">
+              • Dual AI + Physics Safety: Overrides AI to ISOLATE if reference white tile drift &gt;5% or window lens is dirty.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Tech Stack -->
+      <div class="col-span-3 space-y-2 text-[10px]">
+        <div class="font-black text-xs text-slate-800 uppercase">TECHNOLOGIES USED</div>
+        
+        <div class="bg-slate-800 text-white p-2.5 rounded-lg space-y-1">
+          <div class="font-bold text-cyan-400">Frontend:</div>
+          <div>React 18 + Vite + TypeScript + Tailwind CSS; Recharts & Canvas SCADA twin.</div>
+        </div>
+
+        <div class="bg-slate-800 text-white p-2.5 rounded-lg space-y-1">
+          <div class="font-bold text-indigo-400">Backend:</div>
+          <div>Node.js + Express + Socket.IO real-time stream & risk engine.</div>
+        </div>
+
+        <div class="bg-slate-800 text-white p-2.5 rounded-lg space-y-1">
+          <div class="font-bold text-emerald-400">Hardware & Edge AI:</div>
+          <div>Jetson Orin, ESP32, NIR HSI, UV-A 365nm, ToF 3D sensor, pneumatic relay.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: FEASIBILITY AND VIABILITY -->
+  <div class="slide-page p-8 flex flex-col justify-between">
+    <div class="flex items-center justify-between border-b-2 border-indigo-600 pb-2">
+      <div class="flex items-center space-x-4">
+        <span class="oval-badge text-indigo-900 text-sm">VEYRAX</span>
+        <h1 class="text-3xl font-black text-slate-900">FEASIBILITY AND VIABILITY</h1>
+      </div>
+      <div class="text-right"><span class="text-xs font-bold text-slate-500">SIH 2026</span></div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4 flex-1 items-stretch mt-2 text-[10px]">
+      <!-- Box 1 -->
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-3.5 space-y-2">
+        <div class="font-black text-xs text-amber-950 uppercase border-b border-amber-300 pb-1">FEASIBILITY ANALYSIS</div>
+        <div class="space-y-1.5">
+          <div><strong class="text-slate-900">Technological Feasibility:</strong> Uses off-the-shelf edge sensors & AI. Retrofit-ready design clips over existing food conveyors without infrastructure shutdown.</div>
+          <div><strong class="text-slate-900">Economic Feasibility:</strong> $250–$400 prototype cost vs $50,000 lab hyperspectral cameras, dramatically lowering adoption barriers for food MSMEs.</div>
+          <div><strong class="text-slate-900">Operational Feasibility:</strong> Inline plug-and-play installation with zero line downtime. Intuitive SCADA twin requires minimal operator training.</div>
+          <div><strong class="text-slate-900">Scalability:</strong> Modular sensor pod deployable across grain mills, dairy, fruit sorters, and meat processing facilities.</div>
+        </div>
+      </div>
+
+      <!-- Box 2 -->
+      <div class="bg-slate-100 border border-slate-300 rounded-xl p-3.5 space-y-2">
+        <div class="font-black text-xs text-slate-950 uppercase border-b border-slate-300 pb-1">CHALLENGES AND RISKS</div>
+        <div class="space-y-1.5">
+          <div><strong class="text-slate-900">Harsh Environment:</strong> Steam, flour dust, humidity & oil splash affect optical window transmissive signal.</div>
+          <div><strong class="text-slate-900">Data Imbalance:</strong> Novel or rare microbial mutations missing in training manifolds.</div>
+          <div><strong class="text-slate-900">Connectivity Loss:</strong> Unstable factory Wi-Fi delaying cloud dashboard updates.</div>
+          <div><strong class="text-slate-900">False Positives:</strong> Surface dust specks causing unnecessary food waste.</div>
+          <div><strong class="text-slate-900">Safety Failures:</strong> Ejection failure leading to foodborne illness outbreaks.</div>
+        </div>
+      </div>
+
+      <!-- Box 3 -->
+      <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-3.5 space-y-2">
+        <div class="font-black text-xs text-indigo-950 uppercase border-b border-indigo-300 pb-1">STRATEGIES FOR OVERCOMING</div>
+        <div class="space-y-1.5">
+          <div><strong class="text-indigo-950">Ruggedized Enclosure:</strong> IP65 sealed chassis with optical window residue detector & pneumatic air-knife wiper.</div>
+          <div><strong class="text-indigo-950">Open-Set AI:</strong> Out-of-Distribution Mahalanobis scoring flags unknown microbes as <em>UNKNOWN ANOMALY — LAB VERIFY</em>.</div>
+          <div><strong class="text-indigo-950">Offline-First Edge:</strong> Direct microsecond hardware relay trigger ensures sub-10ms rejection even offline.</div>
+          <div><strong class="text-indigo-950">AI + Physics Safety:</strong> Reference white tile self-calibration overrides AI if sensor conditions drift.</div>
+          <div><strong class="text-indigo-950">Closed-Loop Confirmation:</strong> Downstream optical sensor verifies physical ejection into isolation bin.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: IMPACT AND BENEFITS -->
+  <div class="slide-page p-8 flex flex-col justify-between">
+    <div class="flex items-center justify-between border-b-2 border-indigo-600 pb-2">
+      <div class="flex items-center space-x-4">
+        <span class="oval-badge text-indigo-900 text-sm">VEYRAX</span>
+        <h1 class="text-3xl font-black text-slate-900">IMPACT AND BENEFITS</h1>
+      </div>
+      <div class="text-right"><span class="text-xs font-bold text-slate-500">SIH 2026</span></div>
+    </div>
+
+    <div class="grid grid-cols-12 gap-4 flex-1 items-center mt-2 text-[10px]">
+      <!-- Left Radial Benefits -->
+      <div class="col-span-6 bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
+        <div class="font-black text-xs text-slate-900 text-center uppercase">KEY BENEFITS</div>
+
+        <div class="grid grid-cols-2 gap-2 text-[9px]">
+          <div class="bg-white p-2 rounded shadow-sm border border-slate-200">
+            <strong class="text-emerald-700">Enhanced Food Safety:</strong> Real-time non-destructive scanning protects consumers from Salmonella & E. coli outbreaks.
+          </div>
+          <div class="bg-white p-2 rounded shadow-sm border border-slate-200">
+            <strong class="text-indigo-700">Zero Line Downtime:</strong> Instant inline &lt;10ms decisioning eliminates 24-48hr lab incubation delays.
+          </div>
+          <div class="bg-white p-2 rounded shadow-sm border border-slate-200">
+            <strong class="text-amber-700">Cost Savings:</strong> Prevents multi-million dollar product recalls, brand damage, & regulatory fines.
+          </div>
+          <div class="bg-white p-2 rounded shadow-sm border border-slate-200">
+            <strong class="text-purple-700">Sustainability:</strong> Eliminates food waste by isolating only specific contaminated items.
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Impact on Target Audience -->
+      <div class="col-span-6 space-y-2">
+        <div class="font-black text-xs text-slate-900 uppercase">IMPACT ON TARGET AUDIENCE</div>
+        
+        <div class="bg-slate-800 text-white p-2.5 rounded-lg space-y-0.5">
+          <div class="font-bold text-cyan-300">Food Processors & MSMEs:</div>
+          <div class="text-slate-300">Higher throughput, zero recall risk, 100% inspection compliance guarantee.</div>
+        </div>
+
+        <div class="bg-slate-800 text-white p-2.5 rounded-lg space-y-0.5">
+          <div class="font-bold text-emerald-300">Line Operators & Quality Staff:</div>
+          <div class="text-slate-300">Automated alerts, intuitive digital twin visualizer, reduced manual sampling workload.</div>
+        </div>
+
+        <div class="bg-slate-800 text-white p-2.5 rounded-lg space-y-0.5">
+          <div class="font-bold text-indigo-300">MoFPI & Regulatory Bodies (FSSAI):</div>
+          <div class="text-slate-300">Auditable digital QR passports, alignment with Make in India & FSSAI food safety regulations.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: RESEARCH AND REFERENCES -->
+  <div class="slide-page p-8 flex flex-col justify-between">
+    <div class="flex items-center justify-between border-b-2 border-indigo-600 pb-2">
+      <div class="flex items-center space-x-4">
+        <span class="oval-badge text-indigo-900 text-sm">VEYRAX</span>
+        <h1 class="text-3xl font-black text-slate-900">RESEARCH AND REFERENCES</h1>
+      </div>
+      <div class="text-right"><span class="text-xs font-bold text-slate-500">SIH 2026</span></div>
+    </div>
+
+    <div class="space-y-4 flex-1 mt-2">
+      <div class="flex justify-between items-center text-[10px] font-bold text-center">
+        <div class="bg-amber-100 text-amber-900 p-2 rounded flex-1 mx-1 shadow-sm">Monitor Surface Condition</div>
+        <span>➔</span>
+        <div class="bg-indigo-100 text-indigo-900 p-2 rounded flex-1 mx-1 shadow-sm">Analyze Multi-Sensor Data</div>
+        <span>➔</span>
+        <div class="bg-purple-100 text-purple-900 p-2 rounded flex-1 mx-1 shadow-sm">Detect Microbial Anomaly Early</div>
+        <span>➔</span>
+        <div class="bg-emerald-100 text-emerald-900 p-2 rounded flex-1 mx-1 shadow-sm">Predict Contamination Risk</div>
+        <span>➔</span>
+        <div class="bg-rose-100 text-rose-900 p-2 rounded flex-1 mx-1 shadow-sm">Trigger Pneumatic Ejection</div>
+      </div>
+
+      <div class="bg-slate-900 text-white p-4 rounded-xl space-y-2 text-[11px] font-mono">
+        <div class="text-cyan-400 font-bold">PROJECT CODEBASE & INTERACTIVE SCADA DIGITAL TWIN REPOSITORY:</div>
+        <a href="https://github.com/Aravindh-coder/spectraguard-x" target="_blank" class="text-indigo-300 underline font-bold">
+          https://github.com/Aravindh-coder/spectraguard-x
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
